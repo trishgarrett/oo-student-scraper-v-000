@@ -18,7 +18,7 @@ class Scraper
 
    def self.scrape_profile_page(profile_url)
      profile_doc = Nokogiri::HTML(open(profile_url))
-     @attributes = {}
+     attributes = {}
      profile_doc.css("div.social-icon-container a").each do |link|
        case link.attribute("href").value
        when /twitter/
