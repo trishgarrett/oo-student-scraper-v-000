@@ -5,7 +5,7 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    attributes.each_pair { |key, value| self.send(("#{key}="), value) }
+    Scraper.attributes.each_pair { |key, value| self.send(("#{key}="), value) }
      @@all << self
   end
 
@@ -18,6 +18,6 @@ class Student
   end
 
   def self.all
-  
+
   end
 end
