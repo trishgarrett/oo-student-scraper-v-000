@@ -1,11 +1,11 @@
 class Student
 
-  attr_accessor :name, :location, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :profile_url
+  attr_accessor :name, :location, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :profile_url, :attributes
 
   @@all = []
 
   def initialize(student_hash)
-    Scraper.attributes.each_pair { |key, value| self.send(("#{key}="), value) }
+    attributes.each_pair { |key, value| self.send(("#{key}="), value) }
      @@all << self
   end
 
