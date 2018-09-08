@@ -1,11 +1,12 @@
 class Student
 
-  attr_accessor :name, :location, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :profile_url, :attributes
+  attr_accessor :name, :location, :twitter, :linkedin, :github, :blog, :profile_quote, :bio, :profile_url
 
   @@all = []
 
   def initialize(student_hash)
-    attributes.each { |key, value| self.send(("#{key}="), value) }
+    student_hash.each_pair { |key, value| self.send(("#{key}="), value) }
+    
      @@all << self
   end
 
